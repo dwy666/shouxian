@@ -13,8 +13,13 @@ export default new Router({
         },
         {
             path: '/',
-            name: 'HelloWorld',
-            component: resolve => require(['../components/viewPage/index.vue'], resolve)
+            name: 'index',
+            component: resolve => require(['../components/viewPage/index.vue'], resolve),
+            children:[{
+                path:'peasonSetting',
+                name:'peasonSetting',
+                component: resolve => require(['../components/peasonSetting/index.vue'], resolve),
+            }]
         }
     ]
 })
