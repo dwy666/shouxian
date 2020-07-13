@@ -4,6 +4,11 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import './libs/rem'
+
+import { Tab, Tabs, Tabbar, TabbarItem, Cell, CellGroup } from 'vant';
+
+Vue.use(Tab).use(Tabs).use(Tabbar).use(TabbarItem).use(Cell).use(CellGroup);
+
 Vue.config.productionTip = false
 
 router.beforeEach((to, from, next) => {
@@ -21,7 +26,6 @@ Vue.prototype.$common = common
 new Vue({
     el: '#app',
     router,
-    store,
     components: { App },
     template: '<App/>'
 })
