@@ -3,7 +3,7 @@ const baseSize = 32
 function setRem() {
 
 
-    let htmlWidth = document.documentElement.clientWidth / 750;
+    let htmlWidth = document.documentElement.clientWidth / 375;
 
     //设置根元素字体大小
     document.documentElement.style.fontSize = (baseSize * Math.min(htmlWidth, 2)) + 'px';
