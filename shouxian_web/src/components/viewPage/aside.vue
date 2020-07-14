@@ -69,7 +69,7 @@ export default {
 <style >
 .tac,
 .el-menu {
-	height: 100%;
+	height: 99%;
 	background-color: #343951 !important;
 }
 .el-col {
@@ -102,7 +102,7 @@ export default {
 	width: 4px;
 	height: 46px;
 	top: 0;
-	right: 20px;
+	right: 0px;
 }
 .tac .el-submenu__title i {
 	color: #ffffff;
@@ -119,5 +119,7 @@ export default {
 	font-size: 10px;
 	visibility: hidden;
 }
-
+.tac .el-submenu .el-menu-item{
+	min-width: 180px;
+}
 </style>

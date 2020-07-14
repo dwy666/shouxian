@@ -1,8 +1,9 @@
 <template>
 	<div id="addUser">
-		<div class="dialogMain">
+		<div style="height:458px">
 			<el-scrollbar>
-				<el-form class="clearfix" ref="form" :model="form" label-width="100px">
+				<div class="dialogMain"></div>
+				<el-form class="clearfix" ref="form" :model="form" label-width="96px">
 					<el-form-item label="团队编码：">
 						<el-input v-model="form.name"></el-input>
 					</el-form-item>
@@ -81,12 +82,12 @@ export default {
 <style lang="">
 #addUser .dialogMain {
 	font-size: 16px;
+	padding-right: 20px;
 	color: #000;
 	line-height: 48px;
-	height: 458px;
 }
 .el-form {
-	padding-top: 30px;
+	padding: 30px 20px 0 0;
 }
 .el-form-item {
 	width: 50%;
@@ -97,7 +98,7 @@ export default {
 }
 .messageBox {
 	float: left;
-	width: 234px;
+	width: 231px;
 	border: 1px solid #00000015;
 	margin: 0 32px 20px 0;
 	font-size: 16px;
@@ -153,6 +154,7 @@ export default {
 	line-height: 60px;
 }
 .el-scrollbar {
+	width: 100%;
 	height: 100%;
 }
 .el-scrollbar__wrap {
