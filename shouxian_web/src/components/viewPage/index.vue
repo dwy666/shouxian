@@ -1,6 +1,6 @@
 <template>
 	<el-container>
-		<el-aside width="200px">
+		<el-aside width="180px">
 			<asideView />
 		</el-aside>
 		<el-container>
@@ -33,6 +33,7 @@ export default {
 	padding: 0;
 }
 .el-main{
+    padding: 0;
 	margin: 20px;
 	box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }

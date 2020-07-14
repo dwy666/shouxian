@@ -7,7 +7,7 @@ Vue.use(Router)
 export default new Router({
     routes: [
         {
-            path: './login',
+            path: '/login',
             name: 'login',
             component: resolve => require(['../components/login.vue'], resolve)
         },
@@ -15,11 +15,16 @@ export default new Router({
             path: '/',
             name: 'index',
             component: resolve => require(['../components/viewPage/index.vue'], resolve),
-            children:[{
-                path:'peasonSetting',
-                name:'peasonSetting',
+            children: [{
+
+                path: '/peasonSetting',
+                name: 'peasonSetting',
                 component: resolve => require(['../components/peasonSetting/index.vue'], resolve),
+            }, {
+                path: '/securitySetting',
+                name: 'securitySetting',
+                component: resolve => require(['../components/securitySetting/index.vue'], resolve),
             }]
-        }
+        },
     ]
 })

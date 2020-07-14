@@ -11,7 +11,8 @@ export default {
 </script>
 
 <style>
-html,body{
+html,
+body {
 	margin: 0;
 	padding: 0;
 	height: 100%;
@@ -24,7 +25,15 @@ html,body{
 	text-align: center;
 	color: #2c3e50;
 }
-.el-container{
+.el-container {
 	height: 100%;
+}
+.clearfix::after {
+	height: 0;
+	display: block;
+	content: "";
+	clear: both;
+	visibility: hidden;
+	overflow: hidden;
 }
 </style>
