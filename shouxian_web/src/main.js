@@ -111,6 +111,27 @@ Vue.prototype.$http = $axios
 
 import common from './libs/common'
 Vue.prototype.$common = common
+
+Vue.directive('clickOutSide', {
+    bind(el, binding, vnode) {
+      el.handler = function(e) {
+        if (el.contains(e.target)) {
+          return false
+        }
+        // vnode.context[binding.expression] = false
+        binding.value()
+      }
+      el.stopProp = function(event) {
+        event.stopPropagation()
+      }
+      el.addEventListener('click', el.stopProp)
+      document.body.addEventListener('click', el.handler)
+    },
+    unbind(el, binding) {
+      el.removeEventListener('click', el.stopProp)
+      document.body.removeEventListener('click', el.handler)
+    }
+  })
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
