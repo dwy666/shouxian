@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="userDiv">
-      <img src alt />
+      <img :src="avatarIcon" alt />
       <span>jhjk</span>
     </div>
   </div>
@@ -9,7 +9,9 @@
 <script>
   export default {
     data() {
-      return {};
+      return {
+        avatarIcon:require('../../assets/jx_avatar.png')
+      };
     }
   };
 </script>
@@ -20,7 +22,7 @@
 }
 .userDiv {
   float: right;
-  margin: 15px 100px 5px 0;
+  margin: 15px 32px 5px 0;
 }
 img {
   display: inline-block;
@@ -28,6 +30,7 @@ img {
   height: 30px;
   border-radius: 50%;
   vertical-align: middle;
+  margin-right: 8px;
 }
 
 </style>
