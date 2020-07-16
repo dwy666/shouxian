@@ -7,9 +7,18 @@ Vue.use(Router)
 export default new Router({
     routes: [
         {
-            path: '/login',
-            name: 'login',
-            component: resolve => require(['../components/login.vue'], resolve)
+            path: '/phone',
+            name: 'phone',
+            component: resolve => require(['../components/login/index.vue'], resolve),
+            children: [{
+                path: 'login',
+                name: 'login',
+                component: resolve => require(['../components/login/login.vue'], resolve)
+            }, {
+                path: 'resetPasswd',
+                name: 'resetPasswd',
+                component: resolve => require(['../components/login/resetPasswd.vue'], resolve)
+            }]
         },
         {
             path: '/',

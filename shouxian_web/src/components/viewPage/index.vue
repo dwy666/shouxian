@@ -10,6 +10,7 @@
 			<el-main>
 				<router-view />
 			</el-main>
+            <div style="font-size:14px;line-height:70px;color:#00000065">CopyRight © 2020 嘉信保险经纪公司 版权所有 粤ICP备18102183号</div>
 		</el-container>
 	</el-container>
 </template>
@@ -34,7 +35,7 @@ export default {
 }
 .el-main{
     padding: 0;
-	margin: 20px;
+	margin: 20px 24px 0px;
 	box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
 }
 </style>
