@@ -2,10 +2,15 @@ import http from './axios';
 import router from '../router';
 import store from '../store/index';
 import common from './common';
-
+import { Loading } from 'element-ui';
 let ajax = {
     loginByPasswd: loginByPasswd,
-    loginByVerify: loginByVerify
+    loginByVerify: loginByVerify,
+    getCode: getCode,
+    resetPasswd: resetPasswd,
+    getInfo: getInfo,
+    safeInfo: safeInfo,
+    modifyPasswd: modifyPasswd
 }
 function loginByPasswd(telphone, passwd) {
     return new Promise(resolve => {
@@ -50,6 +55,109 @@ function loginByVerify(telphone, code) {
             } else {
                 resolve(data)
             }
+        })
+    });
+}
+function getCode(telphone) {
+    return new Promise((resolve, Rejected) => {
+        var postData = {
+            sendData: {
+                mobile: telphone,
+                smsType: "SMSSECU01",
+                content:
+                    "(动态验证码，请在10分钟内完成填写，勿将验证码透露给他人。如非本人操作，请忽略。)",
+                smsSign: "【嘉信保险测试】"
+            },
+            sysCode: "jx-insure-web"
+        };
+        http({
+            method: "post",
+            url:
+                process.env.JIAXIN_CENTER_API +
+                "common-api/smsapi/emay/security/send/msg",
+            data: JSON.stringify(postData),
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            }
+        }).then(data => {
+            resolve(data)
+        }).catch(error => {
+            Rejected(error)
+        });
+    })
+}
+function resetPasswd(telphone, passwd, verifyCode) {
+    return new Promise((resolve, Rejected) => {
+        var postData = {
+            sendData: { telphone: telphone, newPasswd: passwd, verifyCode: verifyCode },
+            sysCode: "jx-insure-web"
+        };
+        http({
+            method: "post",
+            url: process.env.API_IP + "jx-insure/web/login/resetPasswd",
+            data: JSON.stringify(postData),
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            }
+        }).then(data => {
+            resolve(data)
+        })
+    });
+}
+function getInfo() {
+    return new Promise(resolve => {
+        var postData = {
+            token: common.getCookie('accessToken'),
+            sysCode: "jx-insure-web"
+        };
+        http({
+            method: "post",
+            url: process.env.API_IP + "jx-insure/user/base/info",
+            data: JSON.stringify(postData),
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            }
+        }).then(data => {
+            resolve(data)
+        })
+    });
+}
+function safeInfo() {
+    return new Promise(resolve => {
+        var postData = {
+            token: common.getCookie('accessToken'),
+            sysCode: "jx-insure-web"
+        };
+        http({
+            method: "post",
+            url: process.env.API_IP + "jx-insure/user/base/safeInfo",
+            data: JSON.stringify(postData),
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            }
+        }).then(data => {
+            resolve(data)
+        })
+    });
+}
+function modifyPasswd(telphone, newPasswd, oldPasswd) {
+    return new Promise(resolve => {
+        var postData = {
+            sendData: {
+                telphone: telphone, newPasswd: newPasswd, oldPasswd: oldPasswd
+            },
+            token: common.getCookie('accessToken'),
+            sysCode: "jx-insure-web"
+        };
+        http({
+            method: "post",
+            url: process.env.API_IP + "jx-insure/web/login/modifyPasswd",
+            data: JSON.stringify(postData),
+            headers: {
+                "Content-Type": "application/json; charset=UTF-8"
+            }
+        }).then(data => {
+            resolve(data)
         })
     });
 }

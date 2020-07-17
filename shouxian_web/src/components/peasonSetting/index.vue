@@ -529,48 +529,7 @@ export default {
 #peasonSetting .el-pagination.is-background .el-pager li:not(.disabled):hover {
 	color: #000000;
 }
-#peasonSetting .el-dialog {
-	width: 640px;
-	margin: 0 auto;
-}
-#peasonSetting .el-dialog__header {
-	width: 100%;
-	line-height: 48px;
-	float: left;
-	padding: 0;
-	text-align: left;
-	padding-left: 24px;
-	border-bottom: 1px solid #00000009;
-}
-#peasonSetting .el-dialog__footer {
-	height: 60px;
-	position: absolute;
-	bottom: -60px;
-	background: white;
-	width: 100%;
-}
-#peasonSetting .dialog-footer {
-	float: right;
-}
-#peasonSetting .el-dialog__body {
-	padding: 30px 0 0 20px;
-}
-#peasonSetting .dialog-footer .el-button--primary:focus,
-#peasonSetting .el-button--primary:hover,
-#peasonSetting .dialog-footer .el-button--primary {
-	background: #f29716;
-	width: 64px;
-	height: 32px;
-	line-height: 32px;
-	padding: 0;
-	border-color: #f29716;
-}
-#peasonSetting .dialog-footer .el-button {
-	width: 64px;
-	height: 32px;
-	line-height: 32px;
-	padding: 0;
-}
+
 #peasonSetting .popTip {
 	width: 186px;
 	height: 86px;
@@ -623,7 +582,7 @@ export default {
 #peasonSetting .el-checkbox__input.is-focus .el-checkbox__inner {
 	border-color: #f29716;
 }
-.reAdd {
+#peasonSetting .reAdd {
 	font-size: 14px;
 	line-height: 54px;
 	box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.15);
@@ -636,7 +595,7 @@ export default {
 	border-radius: 4px;
 	top: 24px;
 }
-.reAdd::after {
+#peasonSetting .reAdd::after {
 	content: "";
 	display: block;
 	height: 0;

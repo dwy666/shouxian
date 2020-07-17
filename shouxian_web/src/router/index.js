@@ -5,30 +5,32 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  routes: [{
-      path: '/login',
-      name: 'login',
-      component: resolve => require(['../components/login/login.vue'], resolve)
+    routes: [{
+        path: '/login',
+        name: 'login',
+        component: resolve => require(['../components/login/login.vue'], resolve)
     }, {
-      path: '/resetPasswd',
-      name: 'resetPasswd',
-      component: resolve => require(['../components/login/resetPasswd.vue'], resolve)
+        path: '/resetPasswd',
+        name: 'resetPasswd',
+        component: resolve => require(['../components/login/resetPasswd.vue'], resolve)
 
     },
     {
-      path: '/',
-      name: 'index',
-      component: resolve => require(['../components/viewPage/index.vue'], resolve),
-      children: [{
-
-        path: '/peasonSetting',
-        name: 'peasonSetting',
-        component: resolve => require(['../components/peasonSetting/index.vue'], resolve),
-      }, {
-        path: '/securitySetting',
-        name: 'securitySetting',
-        component: resolve => require(['../components/securitySetting/index.vue'], resolve),
-      }]
-    },
-  ]
+        path: '/',
+        redirect: '/peasonSetting',
+    }, {
+        path: '/viewPage',
+        name: 'viewPage',
+        component: resolve => require(['../components/viewPage/index.vue'], resolve),
+        children: [
+            {
+                path: '/peasonSetting',
+                name: 'peasonSetting',
+                component: resolve => require(['../components/peasonSetting/index.vue'], resolve),
+            }, {
+                path: '/securitySetting',
+                name: 'securitySetting',
+                component: resolve => require(['../components/securitySetting/index.vue'], resolve),
+            }]
+    }]
 })

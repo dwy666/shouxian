@@ -52,4 +52,46 @@ body {
 .el-input__inner:focus {
 	border-color: #f2a02d;
 }
+.el-dialog {
+	width: 640px;
+	margin: 0 auto;
+}
+.el-dialog__header {
+	width: 100%;
+	line-height: 48px;
+	float: left;
+	padding: 0;
+	text-align: left;
+	padding-left: 24px;
+	border-bottom: 1px solid #00000009;
+}
+.el-dialog__footer {
+	height: 60px;
+	position: absolute;
+	bottom: -60px;
+	background: white;
+	width: 100%;
+}
+.dialog-footer {
+	float: right;
+}
+.el-dialog__body {
+	padding: 30px 0 0 20px;
+}
+.dialog-footer .el-button--primary:focus,
+.el-button--primary:hover,
+.dialog-footer .el-button--primary {
+	background: #f29716;
+	width: 64px;
+	height: 32px;
+	line-height: 32px;
+	padding: 0;
+	border-color: #f29716;
+}
+.dialog-footer .el-button {
+	width: 64px;
+	height: 32px;
+	line-height: 32px;
+	padding: 0;
+}
 </style>

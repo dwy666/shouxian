@@ -2,7 +2,8 @@ let common = {
     delCookie: delCookie,
     getCookie: getCookie,
     setCookie: setCookie,
-    clearAllCookie: clearAllCookie
+    clearAllCookie: clearAllCookie,
+    expPhone: expPhone
 }
 
 function delCookie(name) {
@@ -48,6 +49,10 @@ function clearAllCookie() {
         for (var i = keys.length; i--;)
             document.cookie = keys[i] + '=0;expires=' + new Date(0).toUTCString() + ";path=/";
     }
+}
+
+function expPhone(telphone) {
+    return /^1[3456789]\d{9}$/.test(telphone.trim());
 }
 
 export default common

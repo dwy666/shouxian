@@ -72,16 +72,16 @@ export default {
 	height: 99%;
 	background-color: #343951 !important;
 }
-.el-col {
+.tac .el-col {
 	height: 92%;
 }
-.el-submenu__title {
+.tac .el-submenu__title {
 	background-color: #343951 !important;
 }
 .tac .el-submenu__title {
 	text-align: left;
 }
-.logo {
+.tac .logo {
 	width: 103px;
 	height: 28px;
 	margin: 18px 0 20px -39px;
