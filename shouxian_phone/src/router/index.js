@@ -4,14 +4,33 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
+    base: '/h5/',
     routes: [
         {
             path: '/login',
             name: 'login',
-            component: resolve => require(['../components/login.vue'], resolve),
+            component: resolve => require(['../components/login/login.vue'], resolve),
             meta: {
                 title: "嘉信保险"
             }
+        },{
+            path: '/forgetPasswd',
+            name: 'forgetPasswd',
+            component: resolve => require(['../components/login/forgetPasswd.vue'], resolve),
+            meta: {
+                title: "嘉信保险"
+            }
+        },{
+            path: '/identity',
+            name: 'identity',
+            component: resolve => require(['../components/userPage/identity.vue'], resolve),
+            meta: {
+                title: "嘉信保险"
+            }
+        },{
+            path:'/productItem',
+            name:'productItem',
+            component:resolve => require(['../components/userPage/productItem.vue'],resolve)
         },
         {
             path: '/userPage',
@@ -35,7 +54,8 @@ export default new Router({
                 meta: {
                     title: "嘉信保险"
                 }
-            }]
+            },
+            ]
         },
 
     ]

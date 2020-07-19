@@ -158,7 +158,7 @@ export default {
 		async resetPasswd() {
 			if (
 				/^(?=.*[0-9])(?=.*[a-zA-Z])(.{8,})$/.test(this.pwd.trim()) &&
-				this.pwd === this.confirmPwd
+				this.pwd.trim() === this.confirmPwd.trim()
 			) {
 				var password = Base64.encode(this.pwd);
 				var result = await ajax.resetPasswd(

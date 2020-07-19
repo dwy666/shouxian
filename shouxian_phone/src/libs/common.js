@@ -4,7 +4,9 @@ let common = {
     getCookie: getCookie,
     setCookie: setCookie,
     clearAllCookie: clearAllCookie,
-    isplatform: isplatform
+    isplatform: isplatform,
+    expPhone:expPhone,
+    expPasswd:expPasswd
 }
 function getOpenId() {
     var parts = window.location.search.substr(1).replace("==", "%3D%3D").replace(/\+/g, '%2B').replace(/\"/g, '%22').split('\x26');
@@ -87,5 +89,11 @@ function isplatform() {
     if (isiOS) {
         return "ios";
     }
+}
+function expPhone(telphone) {
+    return /^1[3456789]\d{9}$/.test(telphone.trim());
+}
+function expPasswd(telphone) {
+    return /^(?=.*[0-9])(?=.*[a-zA-Z])(.{8,})$/.test(telphone.trim());
 }
 export default common

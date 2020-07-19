@@ -71,6 +71,7 @@ body {
 	bottom: -60px;
 	background: white;
 	width: 100%;
+	 border-top: 1px solid #00000015;
 }
 .dialog-footer {
 	float: right;

@@ -33,7 +33,7 @@ export default {
 
 	watch: {
 		$route(to, from) {
-			if (this.$route.path == "/product") {
+			if (this.$route.path == "/userPage/product") {
 				this.active = 0;
 			} else {
 				this.active = 1;
